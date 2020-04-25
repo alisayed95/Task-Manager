@@ -24,9 +24,29 @@ const TaskForm = () => {
             setTitle('');
         }
     },[editItem])
+
+    const handleClear = (event) => {
+        event.preventDefault();
+        clearTasks();
+    } 
     return ( 
         <form onSubmit={handleSubmit}>
             <input 
+            type="text"
+            placeholder='Enter Your Task'
+            value={title}
+            required
+            onChange={handleChange}
+            />
+            <div className="btns">
+                <button className ='add-btn' >{!editItem? "Add" : "Edit"}</button>
+                <button className = 'clear-btn' onClick={handleClear}>Clear</button>
+            </div>
+        </form>
+     );
+}
+ 
+export default TaskForm;
             type="text"
             placeholder='Enter Your Task'
             value={title}
