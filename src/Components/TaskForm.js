@@ -47,18 +47,3 @@ const TaskForm = () => {
 }
  
 export default TaskForm;
-            type="text"
-            placeholder='Enter Your Task'
-            value={title}
-            required
-            onChange={handleChange}
-            />
-            <div className="btns">
-            <button className ='add-btn' type='submit'>{!editItem? "Add" : "Edit"}</button>
-                <button className = 'clear-btn' onClick={clearTasks}>Clear</button>
-            </div>
-        </form>
-     );
-}
- 
-export default TaskForm;
