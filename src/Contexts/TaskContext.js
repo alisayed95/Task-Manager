@@ -21,8 +21,9 @@ const TaskContextProvider = (props) => {
         setEditItem(tasks.find(task => task.id === id));
     }
     const editTask= (title,id) =>{
-        const newTasks = tasks.map(task => (task.id === id? {title,id} : task));
-        setTasks(newTasks);
+        //const newTasks = tasks.map(task => (task.id === id? {title,id} : task));
+        const filteredTasks = tasks.filter(task => task.id !== id)
+        setTasks([...filteredTasks, {title,id}]);
         setEditItem(null);
     }
     return ( 
